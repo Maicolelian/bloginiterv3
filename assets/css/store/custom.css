@@ -1,0 +1,41 @@
+nav.navbar img.logo{
+    max-width: 45px;
+}
+
+.border-red{
+    border-bottom: 15px solid #dc3545;
+}
+
+.right{
+    float: right;
+}
+
+
+.list-pay-product .list-group-item{
+    border: none;
+}
+
+/**************************************Carrito*/
+.car-products .card-body{
+    padding: 5px;
+    animation: bgRed 1s ease 1;
+}
+
+.car-products .card-body p{
+    margin: 5px;
+}
+
+@keyframes bgRed {
+    0% {
+        color:#000;
+        background: #FFF;
+    }
+    50% {
+        color:#FFF;
+        background: #F78;
+    }
+    100% {
+        color:#000;
+        background: #FFF;
+    }
+}
