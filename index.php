@@ -40,6 +40,8 @@ define('APP_VERSION', "1");
 define('APP_NAME', "BlogIniter");
 define('PROJECT_FOLDER', "curso01");
 define('APP_DESCRIPTION', "Primer blog...");
+define('KEY_STRIPE_SECRET', 'sk_test_51Ow3gC06wfaQ67XmZ7QWvEYUICLJDVUBFbhk3l7hgNsWRioG9yYSq0zNvOzu8WPzL6wvuYxSDJ0peo1YukaIwYJz00tpCuLUmx');
+define('KEY_STRIPE_PUCLIC', 'pk_test_51Ow3gC06wfaQ67XmVA8vfnr962bZetT6EdP85DApAV5GbqjZSPYfs6v2pXmWtLVijqh4dPeyCZjBiXJiVk5mRkuf00GG0oMrPH');
 
 /*
  *---------------------------------------------------------------

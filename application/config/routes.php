@@ -71,5 +71,5 @@ $route['blog/(:num)'] = 'blog/index/$1';
 $route['blog/(:any)/(:any)'] = 'blog/post_view/$1/$2';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route[LOGIN_PAGE] = 'examples/login';
+$route[LOGIN_PAGE] = 'app/login';
 $route['register'] = 'app/register';
