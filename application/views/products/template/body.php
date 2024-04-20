@@ -12,7 +12,7 @@
         <!-- adminlte-->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin/adminlte.min.css">
 
-        <script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/jquery-3.7.1.min.js"></script>
 
         <?php (isset($grocery_crud)) ? $this->load->view("admin/template/grocery_crud_header", ["grocery_crud" => $grocery_crud]) : '' ?>
     </head>

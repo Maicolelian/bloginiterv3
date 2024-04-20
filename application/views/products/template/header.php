@@ -31,7 +31,7 @@
 
                             <p>
                                 <?php echo $this->session->userdata('name') ?> - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                <small>Member since Dic. 2023</small>
                             </p>
                         </li>
                         <!-- Menu Body -->
