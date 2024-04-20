@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-$autoload['packages'] = array();
+$autoload['packages'] = array(APPPATH . 'third_party/community_auth/');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'text', 'Post_helper', 'Date_helper', 'User_helper', 'Seo_helper');
+$autoload['helper'] = array('url', 'text', 'Post_helper', 'Date_helper', 'User_helper', 'Seo_helper', 'product_helper');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Post', 'User', 'Category');
+$autoload['model'] = array('Post', 'User', 'Category', 'Product', 'Product', 'Request_product', 'Product_category');

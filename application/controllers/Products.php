@@ -30,9 +30,9 @@ class Products extends MY_Controller {
 
         $crud = new grocery_CRUD();
 
-        if ($this->session->userdata("auth_level") == 6) {
+        /* if ($this->session->userdata("auth_level") == 6) {
             $crud->where('user_id', $this->session->userdata("id"));
-        }
+        } */
 
         $crud->set_table('products');
         $crud->set_subject('Product');
@@ -187,10 +187,10 @@ class Products extends MY_Controller {
 //        $view["body"] = $this->load->view("products/category/list", $data, TRUE);
         $crud = new grocery_CRUD();
 
-        if ($this->auth_data->auth_level == 6) {
+        //if ($this->auth_data->auth_level == 6) {
             $crud->unset_add();
             $crud->unset_delete();
-        }
+        //}
 
 //        $crud->set_theme('datatables');
         $crud->set_table('product_categories');
