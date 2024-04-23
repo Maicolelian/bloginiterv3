@@ -24,6 +24,7 @@ class App extends MY_Controller
 
 	public function login()
 	{
+
 		if ($this->uri->uri_string() == 'app/login')
 			show_404();
 
@@ -33,8 +34,12 @@ class App extends MY_Controller
 
 	public function ajax_attempt_login()
 	{
+        /* var_dump($this->input->is_ajax_request());
+        exit; */
+
 		if( $this->input->is_ajax_request() )
 		{
+            // var_dump('hola');
 			// Allow this page to be an accepted login page
 			$this->config->set_item('allowed_pages_for_login', ['app/ajax_attempt_login'] );
 
@@ -87,6 +92,7 @@ class App extends MY_Controller
 		// Show 404 if not AJAX
 		else
 		{
+            // var_dump('error');
 			show_404();
 		}
 	}

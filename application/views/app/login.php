@@ -49,14 +49,15 @@
                 data: {
                     'login_string': $('[name="login_string"]').val(),
                     'login_pass': $('[name="login_pass"]').val(),
-                    'loginToken': $('[name="token"]').val()
+                    'loginToken': $('[name="token"]').val(response.token)
                 },
+                console.log(data);
                 dataType: 'json',
                 success: function (response) {
                     $('[name="loginToken"]').val(response.token);
                     console.log(response);
                     if (response.status == 1) {
-                        window.location.href = '<?php echo base_url() ?>';
+                        window.location.href = '<?php echo base_url() ?>admin';
                     } else if (response.status == 0 && response.on_hold) {
                         $('form').hide();
                         $('#on-hold-message').show();
@@ -66,6 +67,7 @@
                     }
                 }
             });
+            console.log('hola');
             return false;
         });
     });
