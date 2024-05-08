@@ -1,7 +1,7 @@
 Vue.component('v-pagination', window['vue-plain-pagination'])
 
 const router = new VueRouter({
-    base: 'blogigniter/store',
+    base: 'bloginiter/store',
     mode: 'history',
     routes: [
         {

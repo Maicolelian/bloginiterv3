@@ -57,7 +57,7 @@
                     $('[name="loginToken"]').val(response.token);
                     console.log(response);
                     if (response.status == 1) {
-                        window.location.href = '<?php echo base_url() ?>admin';
+                        window.location.href = '<?php echo base_url() ?>';
                     } else if (response.status == 0 && response.on_hold) {
                         $('form').hide();
                         $('#on-hold-message').show();

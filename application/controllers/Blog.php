@@ -8,6 +8,7 @@ class Blog extends MY_Controller
 
 	}
 
+    // pagina de inicio
 	public function index($num_page = 1) {
 
         $num_page--;
@@ -35,6 +36,7 @@ class Blog extends MY_Controller
         $this->parser->parse("blog/template/body", $view);
     }
 
+    // categoria de los post
 	public function category($c_clean_url, $num_page = 1) {
 
         $category = $this->Category->GetByUrlClean($c_clean_url);
@@ -65,6 +67,7 @@ class Blog extends MY_Controller
         $this->parser->parse("blog/template/body", $view);
     }
 
+    // vista de detalles de los post
 	public function post_view($c_clean_url, $clean_url = null) 
 	{
 		if (strpos($this->uri->uri_string(), 'blog/post_view') !== false)

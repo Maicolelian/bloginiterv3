@@ -27,7 +27,7 @@ class Spa extends MY_Controller {
         $data['last_page'] = $last_page;
         $data['current_page'] = $num_page;
         $data['token_url'] = 'spa/';
-        $data['posts'] = $this->Post->get_pagination($offset, $this->session->userdata("id"));
+        $data['posts'] = $this->Post->get_pagination($offset/* , $this->session->userdata("id") */);
         $data['last_page'] = $last_page;
         $data['pagination'] = true;
         $view['body'] = $this->load->view("spa/utils/post_list", $data, TRUE);
@@ -54,7 +54,7 @@ class Spa extends MY_Controller {
         $data['last_page'] = $last_page;
         $data['current_page'] = $num_page;
         $data['token_url'] = 'spa/';
-        $data['posts'] = $this->Post->get_pagination($offset, $this->session->userdata("id"));
+        $data['posts'] = $this->Post->get_pagination($offset/* , $this->session->userdata("id") */);
         $data['last_page'] = $last_page;
         $data['pagination'] = true;
         echo json_encode($data);
@@ -95,7 +95,7 @@ class Spa extends MY_Controller {
         $data['last_page'] = $last_page;
         $data['current_page'] = $num_page;
         $data['token_url'] = 'spa/category/' . $c_clean_url . '/';
-        $data['posts'] = $this->Post->get_pagination($offset, $this->session->userdata("id"), 'Si', 'desc', $c_clean_url);
+        $data['posts'] = $this->Post->get_pagination($offset, /* $this->session->userdata("id"), */ 'Si', 'desc', $c_clean_url);
         $data['last_page'] = $last_page;
         $data['pagination'] = true;
         $view['body'] = $this->load->view("spa/utils/post_list", $data, TRUE);
@@ -126,7 +126,7 @@ class Spa extends MY_Controller {
         $data['current_page'] = $num_page;
         $data['title'] = $category->name;
         $data['token_url'] = 'spa/category/' . $c_clean_url . '/';
-        $data['posts'] = $this->Post->get_pagination($offset, $this->session->userdata("id"), 'Si', 'desc', $c_clean_url);
+        $data['posts'] = $this->Post->get_pagination($offset, /* $this->session->userdata("id"), */ 'Si', 'desc', $c_clean_url);
         $data['last_page'] = $last_page;
         $data['pagination'] = true;
         echo json_encode($data);
@@ -245,7 +245,7 @@ class Spa extends MY_Controller {
                 $this->Group_user_post->deleteByPostIdAndUserId($post_id, $this->session->userdata("id"));
             } else {
                 // nuevo favorito
-                $save = array('user_id' => $this->session->userdata("id"), 'post_id' => $post_id);
+                $save = array('user_id' => /* $this->session->userdata("id"),  */'post_id' => $post_id);
                 $res = $this->Group_user_post->insert($save);
             }
         }

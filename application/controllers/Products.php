@@ -145,11 +145,11 @@ class Products extends MY_Controller {
                 );
 
                 if ($product_id == null) {
-                    /* $save['user_id'] = $this->session->userdata("id");
-                    $product_id = $this->Product->insert($save); */
+                    $save['user_id'] = $this->session->userdata("id");
+                    $product_id = $this->Product->insert($save);
                     $this->insert_product();
                 } else {
-                    /* $this->Product->update($product_id, $save); */
+                    $this->Product->update($product_id, $save);
                     $this->insert_product();
                 }
 

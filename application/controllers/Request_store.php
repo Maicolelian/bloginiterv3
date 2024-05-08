@@ -11,7 +11,7 @@ class Request_store extends MY_Controller {
         $this->load->helper(array('form', 'Product_helper'));
         $this->load->helper('Breadcrumb_helper');
 
-        $this->init_session_auto(6);
+        /* $this->init_session_auto(6); */
     }
 
     public function index() {
@@ -25,9 +25,9 @@ class Request_store extends MY_Controller {
     public function request_list() {
         $crud = new grocery_CRUD();
 
-        if ($this->session->userdata("auth_level") == 6) {
+        /* if ($this->session->userdata("auth_level") == 6) {
             $crud->where('user_id', $this->session->userdata("id"));
-        }
+        } */
 
         $crud->set_table('requests');
         $crud->set_subject('Requets');

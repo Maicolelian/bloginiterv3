@@ -13,11 +13,12 @@ class Admin extends MY_Controller {
 
         /* $this->init_session_auto(9); */
     }
-
+    // pagina de inicio
     public function index() {
         redirect('admin/post_list');
     }
 
+    // crud para crear usuarios
     public function user_crud() {
         $crud = new grocery_CRUD();
 
@@ -25,7 +26,7 @@ class Admin extends MY_Controller {
         $crud->set_table('users');
         $crud->set_subject('Usuario');
 
-        $crud->where("auth_level", 9);
+        $crud->where("auth_level", 1);
 
         $state = $crud->getState();
 
@@ -68,6 +69,7 @@ class Admin extends MY_Controller {
      * CRUD PARA LOS POST
      */
 
+     // listado de los post
     public function post_list() {
         // $data["posts"] = $this->Post->findAll();
         //$view["body"] = $this->load->view("admin/post/list", $data, TRUE);
@@ -98,6 +100,7 @@ class Admin extends MY_Controller {
         $this->parser->parse("admin/template/body", $view);
     }
 
+    // crud para guardar los post
     public function post_save($post_id = null) {
 
         if ($post_id == null) {
@@ -177,6 +180,7 @@ class Admin extends MY_Controller {
         $this->parser->parse("admin/template/body", $view);
     }
 
+    // eliminar post
     public function post_delete($post_id = null) {
         if ($post_id == null) {
             echo 0;
@@ -190,6 +194,7 @@ class Admin extends MY_Controller {
      * CRUD PARA LOS CATEGORY
      */
 
+     // listado de las categorias
     public function category_list() {
 //        $data["categories"] = $this->Category->findAll();
 //        $view["body"] = $this->load->view("admin/category/list", $data, TRUE);
@@ -216,6 +221,7 @@ class Admin extends MY_Controller {
         $this->parser->parse("admin/template/body", $view);
     }
 
+    // crear categoria
     public function category_save($category_id = null) {
 
         if ($category_id == null) {
@@ -264,6 +270,7 @@ class Admin extends MY_Controller {
         $this->parser->parse("admin/template/body", $view);
     }
 
+    // eliminar categoria
     public function category_delete($category_id = null) {
         if ($category_id == null) {
             echo 0;
@@ -273,11 +280,13 @@ class Admin extends MY_Controller {
         }
     }
 
+    // 
     function images_server() {
         $data["images"] = all_images();
         $this->load->view("admin/post/image", $data);
     }
 
+    // guardar imagenes de los post
     function upload($post_id = null, $title = null) {
 
         $image = "upload";
@@ -319,6 +328,7 @@ class Admin extends MY_Controller {
         }
     }
 
+    // caracteristicas y dimensiones de las imagenes de los post 
     function resize_image($path_image) {
         $config['image_library'] = 'gd2';
         $config['source_image'] = $path_image;
@@ -343,11 +353,12 @@ class Admin extends MY_Controller {
         return $post_array;
     }
 
+    // Crear usuario
     function user_before_insert_callback($post_array) {
         $post_array['passwd'] = $this->authentication->hash_passwd($post_array['passwd']);
         $post_array['user_id'] = $this->User->get_unused_id();
         $post_array['created_at'] = date('Y-m-d H:i:s');
-        $post_array['auth_level'] = 9;
+        $post_array['auth_level'] = 1;
 
         return $post_array;
     }
